@@ -1,0 +1,15 @@
+﻿<Window x:Class="WpfAppLogicAnalyzer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:WpfAppLogicAnalyzer"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="Fetch" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="ButtonFetch_Click"/>
+        <TextBlock x:Name="debugText" HorizontalAlignment="Center" Margin="0,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="51" Width="780"/>
+        <WpfPlot Name="WpfPlot1" Margin="10,91,10,10"/>
+        <TextBox x:Name="sampleAmount" Text="{Binding MyValue, FallbackValue=500}" HorizontalAlignment="Left" Margin="69,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ipAddressText" HorizontalAlignment="Left" Margin="280,14,0,0" Text="192.168.0.117" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label" Content="IP Address:" HorizontalAlignment="Left" Margin="207,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.026,-0.153"/>
+
+    </Grid>
+</Window>
