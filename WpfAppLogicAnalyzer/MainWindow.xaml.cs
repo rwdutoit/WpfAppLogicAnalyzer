@@ -1,4 +1,4 @@
-﻿using ScottPlot.Renderable;
+﻿using ScottPlot;
 using System;
 using System.ComponentModel;
 using System.Net;
@@ -145,10 +145,26 @@ namespace WpfAppLogicAnalyzer
                 stopClient();
 
 
-                WpfPlot1.Plot.AddScatterStep(myData.Time, myData.Values[0]);
-                WpfPlot1.Plot.AddScatterStep(myData.Time, myData.Values[1]);
-                WpfPlot1.Plot.AddScatterStep(myData.Time, myData.Values[2]);
-                WpfPlot1.Plot.AddScatterStep(myData.Time, myData.Values[3]);
+                var scatter0 = WpfPlot1.Plot.Add.Scatter(myData.Time, myData.Values[0]);
+                scatter0.ConnectStyle = ScottPlot.ConnectStyle.StepHorizontal;
+                var scatter1 = WpfPlot1.Plot.Add.Scatter(myData.Time, myData.Values[1]);
+                scatter1.ConnectStyle = ScottPlot.ConnectStyle.StepHorizontal;
+                var scatter2 = WpfPlot1.Plot.Add.Scatter(myData.Time, myData.Values[2]);
+                scatter2.ConnectStyle = ScottPlot.ConnectStyle.StepHorizontal;
+                var scatter3 = WpfPlot1.Plot.Add.Scatter(myData.Time, myData.Values[3]);
+                scatter3.ConnectStyle = ScottPlot.ConnectStyle.StepHorizontal;
+
+                WpfPlot1.Plot.Axes.AutoScale();
+                WpfPlot1.Refresh();
+
+                // Display data as text
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                sb.AppendLine("Time\tCh0\tCh1\tCh2\tCh3");
+                for (int i = 0; i < myData.Time.Length; i++)
+                {
+                    sb.AppendLine($"{myData.Time[i]}\t{myData.Values[0][i] - 0}\t{myData.Values[1][i] - 1}\t{myData.Values[2][i] - 2}\t{myData.Values[3][i] - 3}");
+                }
+                dataText.Text = sb.ToString();
 
             }
             catch (Exception ex)
@@ -190,9 +206,9 @@ namespace WpfAppLogicAnalyzer
                     offset += 8;
                     var values = byteBuffer[offset];
                     myData.Values[0][index] = 0 + Convert.ToDouble((values & 1) >> 0);
-                    myData.Values[1][index] = 2 + Convert.ToDouble((values & 2) >> 1);
-                    myData.Values[2][index] = 4 + Convert.ToDouble((values & 4) >> 2);
-                    myData.Values[3][index] = 6 + Convert.ToDouble((values & 8) >> 3);
+                    myData.Values[1][index] = 1 + Convert.ToDouble((values & 2) >> 1);
+                    myData.Values[2][index] = 2 + Convert.ToDouble((values & 4) >> 2);
+                    myData.Values[3][index] = 3 + Convert.ToDouble((values & 8) >> 3);
                     offset++;
                 }
             }

@@ -1,0 +1,130 @@
+# .NET Core
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.log
+*.tmp
+*.temp
+
+# Visual Studio
+.vs/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# NuGet
+packages/
+*.nupkg
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# .NET Core Tools
+.dotnet/
+tools/
+*.cake
+
+# Rider
+.idea/
+
+# ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# WPF Specific
+*.appx
+*.pfx
+*.publishsettings
+
+# User secrets
+secrets.json
+
+# Entity Framework
+*.mdf
+*.ldf
+
+# Test Results
+TestResults/
+*.trx
+*.testsettings
+
+# Coverage
+*.coverage
+*.coveragexml
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]rm/
+[Aa]rm64/
+bld/
+[Bb]uild/
+
+# MSBuild
+*.sln.cache
+*.sln.DotSettings.user
+*.sln.docstates
+
+# ClickOnce
+publish/
+
+# Publish
+*.publish.xml
+*.pubxml
+*.pubxml.user
+
+# NuGet Packages Directory
+packages/
+
+# IIS
+*.svclog
+
+# Application Insights
+ApplicationInsights.config
+
+# Azure
+*.azurePubxml
+*.publishproj
+
+# Windows Store
+*.appxrecipe
+*.appxbundle
+*.appxupload
+
+# Windows Packaging
+*.msix
+*.msixupload
+*.appinstaller
+
+# Temporary Files
+*.tmp
+*.temp
